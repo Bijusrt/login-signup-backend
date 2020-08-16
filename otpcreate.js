@@ -42,7 +42,7 @@ const otp = async(req,res,next)=>{
         next();
     }
     else{
-        res.send({msg:"correct ana no anupu da"})
+        res.send({msg:"Mobile no not registered"})
     }
 }
 
