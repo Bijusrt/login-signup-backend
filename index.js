@@ -70,10 +70,10 @@ app.patch("/forget/password/verify_otp_success",async(req,res)=>{
     res.send({msg : "Password Reset Success!"})
 });
 
-app.post("/mail",(req, res) => {
+app.post("/mail",async (req, res) => {
     var response = req.body;
     let  otp_generated = Math.floor(1000 + Math. random() * 9000);
-    var Email = book.find({email:response.email})
+    var Email = await book.find({email:response.email})
     if(Email.length == 0){
         res.send({msg:"Email not registered!",otp:""})
     }else{
